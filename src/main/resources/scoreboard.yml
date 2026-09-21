@@ -1,0 +1,93 @@
+# LifeaEvents scoreboard.yml
+#
+# Every minigame gets its OWN sidebar scoreboard for each of its 3 phases:
+#   pre_lobby - shown while queued up waiting for the event to start
+#   active    - shown to players still alive/playing once the match begins
+#   spectate  - shown to eliminated players while they spectate the match
+#
+# Placeholders available everywhere: %event% %host% %server%
+# pre_lobby additionally has: %time% (countdown remaining)
+# active/spectate additionally have: %alive% %total% plus whatever that mode
+# lists below it (round counters, scores, phase names, etc - see comments).
+#
+# MiniMessage color tags are supported. Keep lines short - client width varies.
+
+server: "play.lifeamc.fun"
+
+MACE_ROULETTE:
+  pre_lobby:
+    title: "<color:#FF1A1A><b>Mace Roulette</b></color>"
+    lines: ["", "<white>Event: <color:#FF1A1A>%event%</color></white>", "<white>Starting in: <color:#FF1A1A>%time%</color></white>", "<white>Hosted By: <color:#FF1A1A>%host%</color></white>", "", "<gray>%server%</gray>"]
+  # %round%
+  active:
+    title: "<color:#FF1A1A><b>Mace Roulette</b></color>"
+    lines: ["", "<white>Round: <color:#FF1A1A>%round%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>%server%</gray>"]
+  # %round%
+  spectate:
+    title: "<color:#FF1A1A><b>Spectating</b></color>"
+    lines: ["", "<white>Mace Roulette</white>", "<white>Round: <color:#FF1A1A>%round%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>Shift x2 to switch player</gray>", "<gray>%server%</gray>"]
+
+HIDE_AND_SEEK:
+  pre_lobby:
+    title: "<color:#FF1A1A><b>Hide and Seek</b></color>"
+    lines: ["", "<white>Event: <color:#FF1A1A>%event%</color></white>", "<white>Starting in: <color:#FF1A1A>%time%</color></white>", "<white>Hosted By: <color:#FF1A1A>%host%</color></white>", "", "<gray>%server%</gray>"]
+  # %phase% %hiders% %seekers%
+  active:
+    title: "<color:#FF1A1A><b>Hide and Seek</b></color>"
+    lines: ["", "<white>Phase: <color:#FF1A1A>%phase%</color></white>", "<white>Hiders Left: <color:#FF1A1A>%hiders%</color></white>", "<white>Seekers: <color:#FF1A1A>%seekers%</color></white>", "", "<gray>%server%</gray>"]
+  # %phase% %hiders% %seekers%
+  spectate:
+    title: "<color:#FF1A1A><b>Spectating</b></color>"
+    lines: ["", "<white>Hide and Seek</white>", "<white>Phase: <color:#FF1A1A>%phase%</color></white>", "<white>Hiders Left: <color:#FF1A1A>%hiders%</color></white>", "", "<gray>Shift x2 to switch player</gray>", "<gray>%server%</gray>"]
+
+HOT_TNT:
+  pre_lobby:
+    title: "<color:#FF1A1A><b>Hot TNT</b></color>"
+    lines: ["", "<white>Event: <color:#FF1A1A>%event%</color></white>", "<white>Starting in: <color:#FF1A1A>%time%</color></white>", "<white>Hosted By: <color:#FF1A1A>%host%</color></white>", "", "<gray>%server%</gray>"]
+  # %round%
+  active:
+    title: "<color:#FF1A1A><b>Hot TNT</b></color>"
+    lines: ["", "<white>Round: <color:#FF1A1A>%round%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>%server%</gray>"]
+  # %round%
+  spectate:
+    title: "<color:#FF1A1A><b>Spectating</b></color>"
+    lines: ["", "<white>Hot TNT</white>", "<white>Round: <color:#FF1A1A>%round%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>Shift x2 to switch player</gray>", "<gray>%server%</gray>"]
+
+SPLEEF:
+  pre_lobby:
+    title: "<color:#FF1A1A><b>Spleef</b></color>"
+    lines: ["", "<white>Event: <color:#FF1A1A>%event%</color></white>", "<white>Starting in: <color:#FF1A1A>%time%</color></white>", "<white>Hosted By: <color:#FF1A1A>%host%</color></white>", "", "<gray>%server%</gray>"]
+  # %time%
+  active:
+    title: "<color:#FF1A1A><b>Spleef</b></color>"
+    lines: ["", "<white>Time Left: <color:#FF1A1A>%time%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>%server%</gray>"]
+  # %time%
+  spectate:
+    title: "<color:#FF1A1A><b>Spectating</b></color>"
+    lines: ["", "<white>Spleef</white>", "<white>Time Left: <color:#FF1A1A>%time%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>Shift x2 to switch player</gray>", "<gray>%server%</gray>"]
+
+TEAM_FIGHT:
+  pre_lobby:
+    title: "<color:#FF1A1A><b>Team Fight</b></color>"
+    lines: ["", "<white>Event: <color:#FF1A1A>%event%</color></white>", "<white>Starting in: <color:#FF1A1A>%time%</color></white>", "<white>Hosted By: <color:#FF1A1A>%host%</color></white>", "", "<gray>%server%</gray>"]
+  # %red% %blue% %time%
+  active:
+    title: "<color:#FF1A1A><b>Team Fight</b></color>"
+    lines: ["", "<red><b>Red: <white>%red%</white></b></red>", "<color:#5555FF><b>Blue: <white>%blue%</white></b></color>", "<white>Time Left: <color:#FF1A1A>%time%</color></white>", "", "<gray>%server%</gray>"]
+  # %red% %blue% %time%
+  spectate:
+    title: "<color:#FF1A1A><b>Spectating</b></color>"
+    lines: ["", "<white>Team Fight</white>", "<red><b>Red: <white>%red%</white></b></red>", "<color:#5555FF><b>Blue: <white>%blue%</white></b></color>", "", "<gray>Shift x2 to switch player</gray>", "<gray>%server%</gray>"]
+
+RED_LIGHT_GREEN_LIGHT:
+  pre_lobby:
+    title: "<color:#FF1A1A><b>Red Light Green Light</b></color>"
+    lines: ["", "<white>Event: <color:#FF1A1A>%event%</color></white>", "<white>Starting in: <color:#FF1A1A>%time%</color></white>", "<white>Hosted By: <color:#FF1A1A>%host%</color></white>", "", "<gray>%server%</gray>"]
+  # %phase% %time%
+  active:
+    title: "<color:#FF1A1A><b>Red Light Green Light</b></color>"
+    lines: ["", "<white>Light: <color:#FF1A1A>%phase%</color></white>", "<white>Time Left: <color:#FF1A1A>%time%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>%server%</gray>"]
+  # %phase% %time%
+  spectate:
+    title: "<color:#FF1A1A><b>Spectating</b></color>"
+    lines: ["", "<white>Red Light Green Light</white>", "<white>Light: <color:#FF1A1A>%phase%</color></white>", "<white>Players Left: <color:#FF1A1A>%alive%</color>/%total%</white>", "", "<gray>Shift x2 to switch player</gray>", "<gray>%server%</gray>"]

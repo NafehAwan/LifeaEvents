@@ -1,0 +1,29 @@
+# LifeaEvents configuration
+
+pregame:
+  countdown-seconds: 90
+  alert-seconds: [60, 30, 10, 5, 4, 3, 2, 1]
+  reminder-interval-seconds: 20
+
+defaults:
+  min-players: 10
+  max-players: 32
+  min-limit: 2
+  max-limit: 100
+
+minigames:
+  mace_roulette:
+    round-time-seconds: 60
+  team_fight:
+    match-time-seconds: 300
+    target-score: 25
+  hide_and_seek:
+    hiding-phase-seconds: 20
+    match-time-seconds: 300
+    seekers: 1
+  hot_tnt:
+    fuse-seconds: 20
+  spleef:
+    match-time-seconds: 300
+  red_light_green_light:
+    match-time-seconds: 180

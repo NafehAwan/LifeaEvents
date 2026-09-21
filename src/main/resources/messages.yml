@@ -1,0 +1,167 @@
+# LifeaEvents messages.yml
+#
+# Every player-facing line the plugin sends lives here - change any of these
+# freely and run /event admin reload (or restart) to apply.
+#
+# - Do NOT edit plugin.yml/config.yml text here, only chat/actionbar/title text.
+# - Placeholders use %like_this% and are listed above each message.
+# - MiniMessage color tags are supported: <red>, <green>, <b>, <color:#RRGGBB>, etc.
+# - The "LifeaEvents" brand word and every GUI's text are intentionally NOT here -
+#   those two are the only places that keep the small-caps font, by design.
+
+event:
+  # %minigame%
+  join-success: "<green>You joined the <color:#FF1A1A>%minigame%</color> event pre-lobby!</green>"
+  # %minigame%
+  leave-success: "<yellow>You left the %minigame% pre-lobby.</yellow>"
+  not-in-lobby: "<red>You are not in a pre-lobby to leave.</red>"
+  no-active-event: "<red>There is no event currently accepting players.</red>"
+  already-joined: "<red>You have already joined this event.</red>"
+  event-full: "<red>This event is full.</red>"
+  usage: "<white>Usage: /event <join|leave|spectate|music></white>"
+  no-permission: "<red>You do not have permission to use this command.</red>"
+  in-game-only: "<red>This command can only be used in-game.</red>"
+  music-on: "<green>Event music is now <b>ON</b>.</green>"
+  music-off: "<red>Event music is now <b>OFF</b>.</red>"
+
+announce:
+  # %host%
+  header: "%brand% <gray>·</gray> <white>Host: <b>%host%</b></white>"
+  # %minigame%
+  minigame-line: "<white>Mini Game:</white> <color:#FF1A1A><b>%minigame%</b></color>"
+  # %current% %max%
+  capacity-line: "<white>Capacity:</white> <color:#FF1A1A>%current%/%max%</color>"
+  # %time%
+  starting-line: "<white>Starting In:</white> <color:#FF1A1A><b>%time%</b></color>"
+  click-to-join: "<color:#FF1A1A><b>[ Click Here To Join Event ]</b></color>"
+  # %minigame% %min%
+  not-enough-players: "<red>Not enough players joined the %minigame% event (needed %min%). It has been cancelled.</red>"
+  already-hosting: "<red>An event is already in progress or being hosted.</red>"
+  arena-not-configured: "<red>That minigame's arena has not been fully configured yet. Ask an admin to run /event setup.</red>"
+  # %minigame%
+  starting-soon-subtitle: "<white>%minigame% starting soon!</white>"
+
+elimination:
+  # %minigame%
+  personal: "<red><b>Eliminated</b></red> <gray>»</gray> <white>You were eliminated from <color:#FF1A1A>%minigame%</color>.</white>"
+  spectate-hint: "<gray>Double-tap <white><b>Shift</b></white> or run <white><b>/event spectate</b></white> to teleport to a remaining player.</gray>"
+  # %player% %minigame%
+  broadcast-generic: "<gray>%player% has been eliminated from %minigame%.</gray>"
+  # %player%
+  disconnected: "<gray>%player% disconnected and was eliminated from the event.</gray>"
+
+winner:
+  # %minigame% %winner%
+  announce: "%minigame% <gray>»</gray> <white><b>%winner%</b> has won the event!</white>"
+  # %minigame%
+  announce-none: "%minigame% <gray>»</gray> <white>The event has ended.</white>"
+
+spectate:
+  not-spectating: "<red>You are not spectating an event right now.</red>"
+  # %player%
+  teleported: "<green>Teleported to <white>%player%</white>.</green>"
+  target-unavailable: "<red>That player is no longer available.</red>"
+  none-remaining: "<gray>No remaining players to spectate right now.</gray>"
+
+setup:
+  # %minigame%
+  started: "<color:#FF1A1A><b>%minigame%</b></color> <white>setup started - follow the steps below.</white>"
+  # %index% %total% %step%
+  step: "<white>Step <color:#FF1A1A><b>%index%/%total%</b></color>: set <color:#FF1A1A><b>%step%</b></color></white>"
+  # %step% %click% - %click% is "Left" or "Right", alternating each step
+  step-actionbar: "<color:#FF1A1A><b>%step%</b></color> <gray>»</gray> <white>%click%-click to set!</white>"
+  # %click%
+  wrong-click: "<red>Use a <b>%click%-click</b> for this step.</red>"
+  # %step%
+  step-set: "<green>%step% set!</green>"
+  # %minigame%
+  complete: "<green><b>Setup Complete!</b></green> <white>%minigame% is ready to host.</white>"
+
+mace_roulette:
+  # %minigame% %count%
+  begun: "<color:#FF1A1A><b>%minigame%</b></color> <white>has begun with %count% players!</white>"
+  # %mode%
+  mode-chosen: "<white>Mode:</white> <color:#FF1A1A><b>%mode%</b></color>"
+  spin-actionbar: "<color:#FF1A1A><b>%mode%</b></color>"
+  countdown-title: "<color:#FF1A1A><b>%seconds%</b></color>"
+  countdown-subtitle: "<white>Get ready!</white>"
+  go-title: "<green><b>GO!</b></green>"
+  # %player%
+  got-mace: "<color:#FF1A1A><b>%player%</b></color> <white>GOT A MACE!</white>"
+  # %attacker% %victim%
+  smashed: "<color:#FF1A1A><b>%attacker%</b></color> <white>SMASHED</white> <color:#FF1A1A><b>%victim%</b></color><white>!</white>"
+  # %player%
+  eliminated: "<color:#FF1A1A><b>%player%</b></color> <white>HAS BEEN ELIMINATED.</white>"
+  # %player%
+  survived: "<color:#FF1A1A><b>%player%</b></color> <white>HAS SURVIVED THE HIT OF MACE!</white>"
+  # %player%
+  round-skipped: "<color:#FF1A1A><b>%player%</b></color> <white>COULDN'T HIT ANYONE, ROUND SKIPPED.</white>"
+  # %round%
+  round-started: "<white>Round <color:#FF1A1A><b>%round%</b></color> - </white><green><b>GO!</b></green>"
+  # %winner%
+  round-winner: "<color:#FF1A1A><b>%winner%</b></color> <white>wins the round!</white>"
+
+hide_and_seek:
+  # %minigame% %seconds%
+  begun: "<color:#FF1A1A><b>%minigame%</b></color> <white>has begun! Hiders, find a spot - Seekers are frozen for %seconds% seconds.</white>"
+  seeking-phase-begun: "<red><b>Seeking phase has begun!</b></red> <white>Hiders, run!</white>"
+  seeking-title: "<red><b>GO!</b></red>"
+  seeking-subtitle: "<white>The Seekers are loose!</white>"
+  # %player%
+  tagged: "<gray>%player% was found and is now a Seeker!</gray>"
+  seekers-win-all-found: "<red><b>Seekers</b></red> <white>found every Hider - Seekers win!</white>"
+  hiders-win-timer: "<red><b>Hiders</b></red> <white>survived - Hiders win!</white>"
+  seekers-win-timer: "<red><b>Seekers</b></red> <white>win!</white>"
+  seekers-win-no-hiders: "<red><b>Seekers</b></red> <white>win - no Hiders remain!</white>"
+  # %player% %minigame%
+  left-event: "<gray>%player% left the %minigame% event.</gray>"
+
+hot_tnt:
+  # %minigame% %count%
+  begun: "<color:#FF1A1A><b>%minigame%</b></color> <white>has begun with %count% players!</white>"
+  # %round% %player%
+  round-started: "<red><b>Round %round%</b></red> <white>-</white> <red><b>%player%</b></red> <white>is holding the TNT!</white>"
+  # %player%
+  passed: "<gray>The TNT was passed to <red>%player%</red>!</gray>"
+  # %seconds%
+  exploding-actionbar: "<red><b>Exploding in %seconds%...</b></red>"
+  # %player%
+  exploded: "<red><b>%player%</b></red> <white>held the TNT too long and was eliminated!</white>"
+  # %player% %minigame%
+  eliminated: "<gray>%player% has been eliminated from %minigame%.</gray>"
+
+spleef:
+  # %minigame% %count%
+  begun: "<color:#FF1A1A><b>%minigame%</b></color> <white>has begun with %count% players! Break the snow beneath your feet!</white>"
+  # %minigame%
+  draw: "<white>%minigame% ended in a draw - time ran out.</white>"
+  # %player% %minigame%
+  eliminated: "<gray>%player% fell out of the arena and was eliminated from %minigame%.</gray>"
+
+team_fight:
+  # %minigame% %target%
+  begun: "<color:#FF1A1A><b>%minigame%</b></color> <white>has begun! Red vs. Blue, first to %target% points wins.</white>"
+  # %team% %minigame% %red% %blue%
+  team-wins-score: "<red><b>%team% Team</b></red> <white>wins %minigame% %red% - %blue%!</white>"
+  # %team%
+  team-wins-timer: "<red><b>%team% Team</b></red> <white>wins on points!</white>"
+  # %minigame% %red% %blue%
+  draw-timer: "<white>%minigame% ended in a draw, %red% - %blue%.</white>"
+  # %player% %minigame%
+  left-event: "<gray>%player% left the %minigame% event.</gray>"
+
+red_light_green_light:
+  # %minigame% %count%
+  begun: "<color:#FF1A1A><b>%minigame%</b></color> <white>has begun with %count% players!</white>"
+  green-light-title: "<green><b>GREEN LIGHT</b></green>"
+  green-light-subtitle: "<white>Go, go, go!</white>"
+  red-light-title: "<red><b>RED LIGHT</b></red>"
+  red-light-subtitle: "<white>FREEZE!</white>"
+  # %player%
+  reached-finish: "<red><b>%player%</b></red> <white>reached the Finish Line!</white>"
+  # %minigame%
+  timer-no-winner: "<white>%minigame% ended - nobody reached the Finish Line.</white>"
+  # %player%
+  eliminated: "<gray>%player% moved on Red Light and was struck down!</gray>"
+  # %minigame%
+  all-eliminated: "<white>Everyone was eliminated - %minigame% ends with no winner.</white>"

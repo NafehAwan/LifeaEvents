@@ -1,0 +1,23 @@
+name: LifeaEvents
+version: '1.0.0'
+main: com.lifea.events.LifeaEvents
+api-version: '1.21'
+author: CraveWho_
+description: Production-ready GUI-based event/minigame management plugin.
+
+commands:
+  event:
+    description: Join, leave, spectate, toggle music - and for staff, host or set up events. Everything lives under this one command now.
+    aliases: [events]
+    usage: /event <join|leave|spectate|music|host|setup|admin>
+
+permissions:
+  lifeaevents.host:
+    description: Allows hosting a LifeaEvent.
+    default: op
+  lifeaevents.admin:
+    description: Allows administrative arena setup.
+    default: op
+  lifeaevents.use:
+    description: Allows joining a LifeaEvent.
+    default: true
