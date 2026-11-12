@@ -1,0 +1,21 @@
+name: LifeaChess
+version: '1.0.0'
+main: com.lifea.chess.LifeaChessPlugin
+api-version: '1.21'
+author: CraveWho_
+description: Tabletop chess with real boards - sit at a table, play on a packet screen, and everyone around can watch.
+depend: [ExyliaLib]
+softdepend: [packetevents]
+
+commands:
+  chess:
+    description: Open the chess menu, or use a subcommand.
+    usage: /chess [play <player>|accept|deny|cancel|resign|draw|stats [player]|leaderboard|spectate <player>|leave|reload|admin]
+
+permissions:
+  lifeachess.play:
+    description: Play chess, challenge players, spectate and view stats.
+    default: true
+  lifeachess.admin:
+    description: Manage tables, reload, force-stop matches.
+    default: op

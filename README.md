@@ -47,3 +47,9 @@ The shaded jar is written to `target/LifeaEvents.jar`.
 This repository was reconstructed from a compiled `LifeaEvents.jar` (the original
 source was not available). Behaviour matches the shipped plugin except for the
 bug fixes committed on top.
+
+## Also in this repository: LifeaChess
+
+`LifeaChess/` holds a separate Maven project — tabletop chess for Paper built on ExyliaLib:
+a pure-Java rules engine with a full test suite, plus a plugin with tables, chairs, an in-world
+public board, a packet-screen board, clocks, Elo and persistence. See `LifeaChess/README.md`.

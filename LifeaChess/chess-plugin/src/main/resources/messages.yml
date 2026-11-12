@@ -1,0 +1,139 @@
+# LifeaChess messages - MiniMessage formatting. Placeholders use %like_this%.
+prefix: "<color:#b14cff><b>CHESS</b></color> <gray>»</gray> "
+
+general:
+  no-permission: "<red>You don't have permission to do that.</red>"
+  players-only: "<red>This command can only be used in-game.</red>"
+  player-not-found: "<red>Player <white>%player%</white> is not online.</red>"
+  disabled-world: "<red>Chess is disabled in this world.</red>"
+  reloaded: "<green>LifeaChess configuration reloaded.</green>"
+  usage: "<white>/chess</white> <gray>opens the menu. Subcommands: play, accept, deny, cancel, resign, draw, stats, leaderboard, spectate, leave.</gray>"
+
+invite:
+  sent: "<green>Challenge sent to <white>%player%</white> (<aqua>%time_control%</aqua>, %mode%). It expires in %seconds%s.</green>"
+  received: "<color:#b14cff><b>%player%</b></color> <white>challenges you to chess</white> <gray>(</gray><aqua>%time_control%</aqua><gray>, %mode%)</gray>"
+  received-buttons: "<click:run_command:'/chess accept'><hover:show_text:'<green>Accept the challenge'><green><b>[ ACCEPT ]</b></green></hover></click> <click:run_command:'/chess deny'><hover:show_text:'<red>Decline'><red><b>[ DENY ]</b></red></hover></click>"
+  self: "<red>You cannot challenge yourself.</red>"
+  already-pending: "<red>You already have a pending challenge to <white>%player%</white>.</red>"
+  none-pending: "<red>You have no pending challenge.</red>"
+  accepted: "<green><white>%player%</white> accepted your challenge!</green>"
+  denied: "<red><white>%player%</white> declined your challenge.</red>"
+  cancelled: "<yellow>Challenge to <white>%player%</white> cancelled.</yellow>"
+  cancelled-notice: "<yellow><white>%player%</white> cancelled their challenge.</yellow>"
+  expired: "<gray>Your challenge to <white>%player%</white> expired.</gray>"
+  target-busy: "<red><white>%player%</white> is already in a match.</red>"
+  you-busy: "<red>You are already in a match. Use <white>/chess leave</white> first.</red>"
+  target-offline: "<red>That player went offline.</red>"
+  ranked-disabled: "<red>Ranked matches are disabled.</red>"
+  casual-disabled: "<red>Casual matches are disabled.</red>"
+
+table:
+  seated: "<green>You sat down as <white>%color%</white>. Waiting for an opponent...</green>"
+  seated-vs: "<green>You sat down as <white>%color%</white> against <white>%opponent%</white>.</green>"
+  seat-taken: "<red>That chair is taken.</red>"
+  stood-up: "<yellow>You stood up from the table.</yellow>"
+  none-nearby: "<red>There is no chess table nearby. Ask an admin to create one.</red>"
+  teleported: "<green>Teleported to table <white>%table%</white>.</green>"
+  in-use: "<red>That table is in use.</red>"
+  created: "<green>Table <white>%table%</white> created. Now set its chairs and board.</green>"
+  removed: "<yellow>Table <white>%table%</white> removed.</yellow>"
+  chair-set: "<green>Chair %index% of table <white>%table%</white> set to your location.</green>"
+  board-set: "<green>Board position of table <white>%table%</white> set.</green>"
+  unknown: "<red>Unknown table <white>%table%</white>.</red>"
+  exists: "<red>A table named <white>%table%</white> already exists.</red>"
+  incomplete: "<red>Table <white>%table%</white> is missing chairs or a board position.</red>"
+
+match:
+  started: "<color:#b14cff><b>MATCH START</b></color> <white>%white%</white> <gray>vs</gray> <white>%black%</white> <gray>(</gray><aqua>%time_control%</aqua><gray>, %mode%)</gray>"
+  your-turn: "<aqua>Your move.</aqua>"
+  not-your-turn: "<red>It's not your turn.</red>"
+  illegal-move: "<red>Illegal move.</red>"
+  not-in-match: "<red>You are not in a match.</red>"
+  move-broadcast: "<gray>%player% played <white>%san%</white></gray>"
+  check: "<red><b>Check!</b></red>"
+  resigned: "<yellow><white>%player%</white> resigned.</yellow>"
+  draw-offered: "<yellow>You offered a draw.</yellow>"
+  draw-offer-received: "<yellow><white>%player%</white> offers a draw. <click:run_command:'/chess draw'><green><b>[ ACCEPT ]</b></green></click> <click:run_command:'/chess draw decline'><red><b>[ DECLINE ]</b></red></click></yellow>"
+  draw-declined: "<yellow><white>%player%</white> declined the draw.</yellow>"
+  draw-claimed: "<yellow>Draw claimed (%reason%).</yellow>"
+  draw-already-offered: "<red>You already offered a draw.</red>"
+  flag: "<red><white>%player%</white> ran out of time.</red>"
+  disconnected: "<yellow><white>%player%</white> disconnected - they have %seconds%s to return.</yellow>"
+  reconnected: "<green><white>%player%</white> is back. The clock resumes.</green>"
+  forfeited: "<red><white>%player%</white> did not return and forfeits.</red>"
+  left: "<yellow>You left the match.</yellow>"
+  spectating: "<green>Now spectating <white>%white%</white> vs <white>%black%</white>.</green>"
+  spectate-stop: "<yellow>You stopped spectating.</yellow>"
+  spectate-none: "<red><white>%player%</white> is not in a match.</red>"
+  spectators-disabled: "<red>Spectating is disabled.</red>"
+  aborted: "<yellow>The match was aborted by an administrator.</yellow>"
+
+result:
+  header: "<color:#b14cff><b>GAME OVER</b></color>"
+  win: "<green><b>%winner%</b> wins</green> <gray>by %reason%</gray> <gray>(%duration%)</gray>"
+  draw: "<yellow><b>Draw</b></yellow> <gray>by %reason%</gray> <gray>(%duration%)</gray>"
+  rating-change: "<white>%player%</white>: <aqua>%rating%</aqua> <gray>(</gray>%delta%<gray>)</gray>"
+  rating-unchanged: "<gray>Casual game - ratings unchanged.</gray>"
+  rating-farm: "<gray>Ratings unchanged: same-opponent cooldown is active.</gray>"
+  rematch-hint: "<gray>Rematch? <click:run_command:'/chess rematch'><green><b>[ REMATCH ]</b></green></click></gray>"
+  reasons:
+    CHECKMATE: "checkmate"
+    STALEMATE: "stalemate"
+    RESIGNATION: "resignation"
+    TIMEOUT: "timeout"
+    TIMEOUT_INSUFFICIENT_MATERIAL: "timeout with insufficient material"
+    AGREEMENT: "agreement"
+    THREEFOLD_REPETITION: "threefold repetition"
+    FIVEFOLD_REPETITION: "fivefold repetition"
+    FIFTY_MOVE_RULE: "the fifty-move rule"
+    SEVENTY_FIVE_MOVE_RULE: "the seventy-five-move rule"
+    DEAD_POSITION: "dead position"
+    ABANDONED: "abandonment"
+
+stats:
+  header: "<color:#b14cff><b>%player%</b></color> <gray>- chess statistics</gray>"
+  line-rating: "<white>Rating:</white> <aqua>%rating%</aqua> <gray>(peak %peak%, rank #%rank%)</gray>"
+  line-record: "<white>Record:</white> <green>%wins%W</green> <red>%losses%L</red> <yellow>%draws%D</yellow> <gray>(%games% games, %win_rate%% wins)</gray>"
+  line-streak: "<white>Streak:</white> <aqua>%streak%</aqua> <gray>(best %best_streak%)</gray>"
+  unknown: "<red>No chess statistics for <white>%player%</white>.</red>"
+  unranked: "unranked"
+
+leaderboard:
+  header: "<color:#b14cff><b>CHESS LEADERBOARD</b></color>"
+  entry: "<gray>#%rank%</gray> <white>%player%</white> <aqua>%rating%</aqua> <gray>(%wins%W/%losses%L/%draws%D)</gray>"
+  empty: "<gray>Nobody has played a rated game yet.</gray>"
+
+menu:
+  modes-title: "MODES » TABLETOP 1/1"
+  hub-title: "CHESS"
+  chess-info: ["<color:#b14cff><b>CHESS</b></color>", "", "<white><b>INFORMATION:</b></white>", "<gray>|</gray> <white>FOR</white> <aqua>2</aqua> <white>PLAYERS.</white>", "<gray>|</gray> <gray>ALSO WITH /CHESS PLAY</gray>", "", "<white><b>STATUS:</b></white>", "<gray>|</gray> <white>STATE</white> <gray>»</gray> %state%", "<gray>|</gray> <white>PLAYING</white> <gray>»</gray> <aqua>%playing%</aqua>", "", "<gold>→ CLICK TO PLAY</gold>"]
+  state-open: "<green>OPEN</green>"
+  state-in-game: "<yellow>IN GAME</yellow>"
+  state-full: "<red>FULL</red>"
+
+queue:
+  joined: "<green>Looking for a match (<aqua>%time_control%</aqua>, %mode%). You'll be seated as soon as someone else queues.</green>"
+  left: "<yellow>You left the matchmaking queue.</yellow>"
+  already: "<red>You are already queued. Use <white>/chess leave</white> to leave the queue.</red>"
+  no-table: "<red>No free chess table is available right now. Ask an admin to create one with <white>/chess admin</white>.</red>"
+
+lobby:
+  settings: "<green>Table settings: <aqua>%time_control%</aqua>, %mode%. Waiting for an opponent to sit down...</green>"
+  updated: "<green>Table settings changed to <aqua>%time_control%</aqua>, %mode%.</green>"
+  sit-hint: "<gray>Right-click a chair at a chess table to sit down, or use the menu.</gray>"
+
+match:
+  rematch-offered: "<green>Rematch offer sent to <white>%player%</white>.</green>"
+  rematch-none: "<red>There is nobody to rematch.</red>"
+  stood-up: "<yellow><white>%player%</white> stood up - they have %seconds%s to sit back down.</yellow>"
+  moved: "<gray>Use the board to move, or <white>/chess move e2e4</white>.</gray>"
+  low-time: "<red><b>%seconds%s left!</b></red>"
+  screens-unavailable: "<yellow>The screen board needs ExyliaLib + PacketEvents. Use the table board and <white>/chess move <move></white> meanwhile.</yellow>"
+
+mode:
+  ranked: "<color:#b14cff>RANKED</color>"
+  casual: "<gray>CASUAL</gray>"
+
+howto:
+  play: ["<color:#b14cff><b>HOW TO PLAY</b></color>", "<white>Sit on a chair to take a side.</white>", "<white>When both chairs are full, the game starts.</white>", "<white>Click a piece, then click where it goes.</white>", "<white>Your clock runs only on your turn.</white>", "<gray>/chess resign · /chess draw · /chess leave</gray>"]
+  win: ["<color:#b14cff><b>HOW TO WIN</b></color>", "<white>Checkmate the enemy king.</white>", "<white>Or win when their clock runs out.</white>", "<white>Or when they resign.</white>", "<gray>Stalemate, repetition, 50 moves,</gray>", "<gray>or agreement end in a draw.</gray>"]

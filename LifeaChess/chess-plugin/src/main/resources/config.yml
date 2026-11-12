@@ -1,0 +1,79 @@
+# LifeaChess configuration
+
+database:
+  # sqlite (default, zero setup) or jdbc (any JDBC URL - e.g. MySQL - the driver must be on the classpath)
+  type: sqlite
+  sqlite-file: lifeachess.db
+  jdbc-url: "jdbc:mysql://localhost:3306/lifeachess?useSSL=false"
+  username: ""
+  password: ""
+
+ratings:
+  starting: 1000
+  k-factor: 32
+  provisional-k: 40
+  provisional-games: 30
+  # Ranked results against the SAME opponent within this many minutes of the previous
+  # ranked game between them are still recorded but do not change ratings (anti-farming). 0 = off.
+  same-opponent-cooldown-minutes: 10
+
+invitations:
+  expiry-seconds: 60
+
+disconnect:
+  # FORFEIT: the absent player loses after the grace period. ADJOURN: the match stays paused.
+  action: FORFEIT
+  grace-seconds: 60
+
+time-controls:
+  default: "10+0"
+  presets: ["1+0", "2+1", "3+0", "3+2", "5+0", "10+0", "10+5", "30+0"]
+  allow-custom: true
+  custom-max-minutes: 180
+  custom-max-increment-seconds: 60
+
+modes:
+  ranked: true
+  casual: true
+
+spectators:
+  enabled: true
+
+table:
+  # Height of the big public board above the table's centre block.
+  board-height: 1.4
+  # Size of one board square in blocks (8 squares wide in total).
+  square-size: 0.3
+  # Open the personal screen board automatically when a player sits down.
+  auto-open-board: true
+  show-how-to-panels: true
+
+screen:
+  # GLYPH draws pieces as Unicode figurines (1 display each); PIXEL draws 16x16 pixel art (4 displays each).
+  piece-style: GLYPH
+
+theme:
+  background: "#0b0b0f"
+  dark-square: "#26262b"
+  light-square: "#3b2b30"
+  last-move: "#2457b8"
+  selected: "#3f7bff"
+  legal-move: "#8b5cf6"
+  capture: "#d12e2e"
+  check: "#ff1a1a"
+  white-piece: "#f5f0e6"
+  black-piece: "#e8788c"
+  clock: "#2ee6d6"
+  accent: "#b14cff"
+  text: "#ffffff"
+  muted: "#9a9aa3"
+  positive: "#4ade80"
+  warning: "#f5b942"
+
+sounds:
+  enabled: true
+animations:
+  enabled: true
+
+disabled-worlds: []
+debug: false
