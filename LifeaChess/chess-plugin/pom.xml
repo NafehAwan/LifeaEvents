@@ -22,10 +22,6 @@
             <id>jitpack</id>
             <url>https://jitpack.io</url>
         </repository>
-        <repository>
-            <id>codemc</id>
-            <url>https://repo.codemc.io/repository/maven-releases/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -40,18 +36,14 @@
             <version>1.21.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-        <!-- ExyliaLib runs as a server plugin; never shade it. Group/artifact per its build.gradle
+        <!-- PacketEvents is only a runtime requirement of ExyliaLib Screens; the plugin never
+             references its API, so it is not a compile dependency.
+             ExyliaLib runs as a server plugin; never shade it. Group/artifact per its build.gradle
              (net.exylia:ExyliaLib). JitPack exposes the GitHub build under com.github.DiGround-s. -->
         <dependency>
             <groupId>com.github.DiGround-s</groupId>
             <artifactId>ExyliaLib</artifactId>
             <version>v1.576.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.retrooper</groupId>
-            <artifactId>packetevents-spigot</artifactId>
-            <version>2.13.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
