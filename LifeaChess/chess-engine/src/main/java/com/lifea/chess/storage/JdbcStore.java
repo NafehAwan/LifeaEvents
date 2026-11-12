@@ -29,6 +29,7 @@ public final class JdbcStore implements AutoCloseable {
     }
 
     public static JdbcStore open(String jdbcUrl, String user, String password) throws SQLException {
+        loadDriver(jdbcUrl);
         Connection c = (user == null || user.isBlank())
                 ? DriverManager.getConnection(jdbcUrl)
                 : DriverManager.getConnection(jdbcUrl, user, password);
@@ -36,6 +37,27 @@ public final class JdbcStore implements AutoCloseable {
         JdbcStore store = new JdbcStore(c, jdbcUrl.startsWith("jdbc:sqlite:"));
         store.createSchema();
         return store;
+    }
+
+    /**
+     * Registers the matching JDBC driver with DriverManager. Drivers supplied via a
+     * plugin's {@code libraries:} live in the plugin class loader, which DriverManager
+     * only consults once the class has been initialised.
+     */
+    private static void loadDriver(String jdbcUrl) {
+        String[] candidates = jdbcUrl.startsWith("jdbc:sqlite:") ? new String[] {"org.sqlite.JDBC"}
+                : jdbcUrl.startsWith("jdbc:mysql:") ? new String[] {"com.mysql.cj.jdbc.Driver", "com.mysql.jdbc.Driver"}
+                : jdbcUrl.startsWith("jdbc:mariadb:") ? new String[] {"org.mariadb.jdbc.Driver"}
+                : jdbcUrl.startsWith("jdbc:postgresql:") ? new String[] {"org.postgresql.Driver"}
+                : new String[0];
+        for (String cls : candidates) {
+            try {
+                Class.forName(cls);
+                return;
+            } catch (ClassNotFoundException ignored) {
+                // try the next candidate; DriverManager may still find a service-loaded driver
+            }
+        }
     }
 
     public static JdbcStore openSqlite(String path) throws SQLException {

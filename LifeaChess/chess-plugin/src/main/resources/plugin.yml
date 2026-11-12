@@ -6,6 +6,9 @@ author: CraveWho_
 description: Tabletop chess with real boards - sit at a table, play on a packet screen, and everyone around can watch.
 depend: [ExyliaLib]
 softdepend: [packetevents]
+# Downloaded by the server at startup (Spigot/Paper plugin libraries) - needed for the default SQLite storage.
+libraries:
+  - org.xerial:sqlite-jdbc:3.46.1.3
 
 commands:
   chess:
